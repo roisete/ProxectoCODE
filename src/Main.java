@@ -48,7 +48,7 @@ public class Main {
                     System.out.println("-----------------------------------------------");
                     break;
                 case 5: /*Sale del programa*/
-                    System.out.println("Muchas gracias por jugar! Saliendo...");
+                    System.out.println("Muchas gracias por jugar!");
                     menu=false;
                     break;
                 default:
