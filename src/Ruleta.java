@@ -1,7 +1,7 @@
 import java.util.*;
 public class Ruleta {
     private int [] ruleta;
-    private final int TAMANO=37;
+    private final int TAMANHO=37;
     private int casilla;
     private String color;
 
@@ -9,7 +9,7 @@ public class Ruleta {
      * Constructor de ruleta
      */
     public Ruleta() {
-        this.ruleta= new int[TAMANO];
+        this.ruleta= new int[TAMANHO];
     }
 
     /**

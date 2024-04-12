@@ -21,7 +21,7 @@ public class Main {
             System.out.println("""
                     ******************************
                     ** ------------------------ **
-                    ** 1. JUEGA!                **
+                    ** 1. GIRA LA RULETA! (TEMP)**
                     ** 2. Comprueba las cuotas  **
                     ** 3. Ingrese más créditos  **
                     ** 4. Info del jugador      **
