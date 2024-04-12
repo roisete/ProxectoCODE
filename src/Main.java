@@ -2,6 +2,8 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        Ruleta rule = new Ruleta();
+        rule.rellenar();
         boolean menu=true;
         Scanner sc = new Scanner(System.in);
         /*Modelo provisional de creación de jugador*/
@@ -19,7 +21,7 @@ public class Main {
             System.out.println("""
                     ******************************
                     ** ------------------------ **
-                    ** 1. Realiza una apuesta!  **
+                    ** 1. JUEGA!                **
                     ** 2. Comprueba las cuotas  **
                     ** 3. Ingrese más créditos  **
                     ** 4. Info del jugador      **
@@ -29,8 +31,8 @@ public class Main {
             int opcion= sc.nextInt();
             switch(opcion){
                 case 1: /*Realizar la apuesta*/
-                    System.out.println("En proceso");
-                    System.out.println("-----------------------------------------------");
+                    rule.toSpin();
+                    System.out.println("\n-----------------------------------------------");
                     break;
                 case 2: /*Comprobar las cuotas*/
                     System.out.println("En proceso");
