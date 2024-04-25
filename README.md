@@ -1,5 +1,4 @@
 PRIMEIRA VERSIÓN 
-	
 	Creación da clase Xogador, composta dos atributos nome (String) e saldo (double).
 	Implementación de getters, setters, constructor e toString().
 	Engádese á clase o método masSaldo(), co cal engades saldo ao xogador
