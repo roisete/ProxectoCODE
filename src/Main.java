@@ -31,8 +31,16 @@ public class Main {
             int opcion= sc.nextInt();
             switch(opcion){
                 case 1: /*Realizar la apuesta*/
-                    rule.toSpin();
-                    System.out.println("\n-----------------------------------------------");
+                    boolean giro = true;
+                    do{
+                        rule.toSpin();
+                        System.out.println("¿Desea girar otra vez? (N para salir)");
+                        String continuar= sc.nextLine();
+                        if (continuar.equalsIgnoreCase("N")){
+                            giro=false;
+                        }
+                        System.out.println("\n-----------------------------------------------");
+                    }while(giro);
                     break;
                 case 2: /*Comprobar las cuotas*/
                     System.out.println("En proceso");
@@ -46,7 +54,7 @@ public class Main {
                     System.out.println("-----------------------------------------------");
                     break;
                 case 4: /*Llama al método toString()*/
-                    System.out.println(jug1.toString());
+                    System.out.println(jug1);
                     System.out.println("-----------------------------------------------");
                     break;
                 case 5: /*Sale del programa*/

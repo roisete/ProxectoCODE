@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Jugador {
 
     /*Declaración de los atributos de la clase*/
