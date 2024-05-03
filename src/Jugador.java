@@ -7,13 +7,6 @@ public class Jugador {
     private String nombreJugador;
     private double saldo;
 
-    /**
-     * getter del atributo nombreJugador
-     * @return el nombre del jugador
-     */
-    public String getNombreJugador() {
-        return nombreJugador;
-    }
 
     /**
      * setter de nombreJugador
