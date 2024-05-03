@@ -1,6 +1,9 @@
 import java.util.*;
 public class Ruleta {
-    private int [] ruleta;
+    private String [] ruleta = {"Verde","Rojo","Negro","Rojo","Negro","Rojo","Negro","Rojo","Negro","Rojo",
+            "Negro","Negro","Rojo","Negro","Rojo","Negro","Rojo","Negro","Rojo",
+            "Rojo","Negro","Rojo","Negro","Rojo","Negro","Rojo","Negro","Rojo",
+            "Negro","Negro","Rojo","Negro","Rojo","Negro","Rojo","Negro","Rojo"};
     private int casilla;
     private String color;
 
@@ -8,18 +11,6 @@ public class Ruleta {
      * Constructor de ruleta
      */
     public Ruleta() {
-        this.ruleta= new int[37];
-    }
-
-    /**
-     * Rellena la ruleta
-     */
-    public void rellenar (){
-        int cont = 0;
-        for (int i = 0; i < this.ruleta.length; i++) {
-            this.ruleta[i]=cont;
-            cont++;
-        }
     }
 
     /**
@@ -50,18 +41,7 @@ public class Ruleta {
      * Setter de variable color
      */
     public void setColor() {
-        int[] conjNegro={2,4,6,8,10,11,13,15,17,20,22,24,26,28,29,31,33,35};
-        for (int negro : conjNegro) {
-            if (this.getCasilla() == negro) {
-                this.color = "Negro";
-                break;
-            } else if (this.getCasilla() == 0) {
-                this.color = "Verde";
-                break;
-            } else {
-                this.color = "Rojo";
-            }
-        }
+        this.color = this.ruleta[getCasilla()];
     }
 
     /**

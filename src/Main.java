@@ -3,21 +3,21 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Ruleta rule = new Ruleta();
-        rule.rellenar();
-        boolean menu=true;
+        boolean menu = true;
         Scanner sc = new Scanner(System.in);
-        /*Modelo provisional de creación de jugador*/
+        Jugador jug1 = new Jugador(null, 0);
         System.out.println("Introduzca su nombre: ");
-        String nombre= sc.nextLine();
-        System.out.println("Introduzca su saldo inicial: ");
-        double saldo= sc.nextDouble();
-        Jugador jug1 = new Jugador(nombre, saldo);
+        String nombre = sc.nextLine();
+        jug1.setNombreJugador(nombre);
+        System.out.println("Introduzca su saldo inicial (mayor de 10 créditos): ");
+        double saldo = sc.nextDouble();
+        jug1.setSaldo(saldo);
         System.out.println("""
-                            ******************************
-                            **  BIENVENIDO A LA RULETA  **
-                            ******************************""");
+                ******************************
+                **  BIENVENIDO A LA RULETA  **
+                ******************************""");
         /*Modelo de menú PROVISIONAL para un solo jugador*/
-        do{
+        do {
             System.out.println("""
                     ******************************
                     ** ------------------------ **
@@ -28,19 +28,20 @@ public class Main {
                     ** 5. Salir                 **
                     ** ------------------------ **
                     ******************************""");
-            int opcion= sc.nextInt();
-            switch(opcion){
+            int opcion = sc.nextInt();
+            switch (opcion) {
                 case 1: /*Realizar la apuesta*/
                     boolean giro = true;
-                    do{
+                    do {
                         rule.toSpin();
-                        System.out.println("¿Desea girar otra vez? (N para salir)");
-                        String continuar= sc.nextLine();
-                        if (continuar.equalsIgnoreCase("N")){
-                            giro=false;
+                        System.out.println("\n¿Desea girar otra vez? (N para salir)");
+                        sc.nextLine();
+                        String continuar = sc.nextLine();
+                        if (continuar.equalsIgnoreCase("N")) {
+                            giro = false;
                         }
                         System.out.println("\n-----------------------------------------------");
-                    }while(giro);
+                    } while (giro);
                     break;
                 case 2: /*Comprobar las cuotas*/
                     System.out.println("En proceso");
@@ -48,9 +49,9 @@ public class Main {
                     break;
                 case 3: /*Llamamos a masSaldo() para añadir créditos*/
                     System.out.println("Cuánto desea añadir? (Deben ser 5 créditos o más) ");
-                    double importe= sc.nextDouble();
+                    double importe = sc.nextDouble();
                     jug1.setSaldo(jug1.masSaldo(importe));
-                    System.out.println("Ahora dispone de "+jug1.getSaldo()+" créditos.");
+                    System.out.println("Ahora dispone de " + jug1.getSaldo() + " créditos.");
                     System.out.println("-----------------------------------------------");
                     break;
                 case 4: /*Llama al método toString()*/
@@ -59,11 +60,11 @@ public class Main {
                     break;
                 case 5: /*Sale del programa*/
                     System.out.println("Muchas gracias por jugar!");
-                    menu=false;
+                    menu = false;
                     break;
                 default:
                     System.out.println("Valor inválido.");
             }
-        }while(menu);
+        } while (menu);
     }
 }

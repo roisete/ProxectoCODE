@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Jugador {
@@ -19,7 +20,21 @@ public class Jugador {
      * @param nombreJugador
      */
     public void setNombreJugador(String nombreJugador) {
-        this.nombreJugador = nombreJugador;
+        boolean setN=true;
+        Scanner sc = new Scanner(System.in);
+        do {
+            try {
+                if (nombreJugador.isEmpty()) {
+                    throw new Exception();
+                } else {
+                    this.nombreJugador = nombreJugador;
+                    setN=false;
+                }
+            } catch (Exception e) {
+                System.out.println("Valor inválido. Inténtelo de nuevo");
+                nombreJugador=sc.nextLine();
+            }
+        }while(setN);
     }
 
     /**
@@ -35,7 +50,24 @@ public class Jugador {
      * @param saldo
      */
     public void setSaldo(double saldo) {
-        this.saldo = saldo;
+        boolean setS=true;
+        Scanner sc = new Scanner(System.in);
+        do {
+            try {
+                if (saldo <= 10) {
+                    throw new Exception();
+                } else {
+                    this.saldo = saldo;
+                    setS=false;
+                }
+            } catch (InputMismatchException e){
+                System.out.println("Valor inválido");
+                saldo= sc.nextDouble();
+            } catch (Exception e) {
+                System.out.println("Valor inválido");
+                saldo= sc.nextDouble();
+            }
+        }while (setS);
     }
 
     /**
