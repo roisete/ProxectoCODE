@@ -21,7 +21,7 @@ public class Main {
             System.out.println("""
                     ******************************
                     ** ------------------------ **
-                    ** 1. GIRA LA RULETA! (TEMP)**
+                    ** 1. Apostar               **
                     ** 2. Comprueba las cuotas  **
                     ** 3. Ingrese más créditos  **
                     ** 4. Info del jugador      **
@@ -66,5 +66,74 @@ public class Main {
                     System.out.println("Valor inválido.");
             }
         } while (menu);
+    }
+
+    /**
+     * Metodo para seleccionar y calcular apuestas
+     * @param saldo el saldo actual del jugador
+     */
+   public static void apuesta(double saldo, int casilla, String color) {
+        Scanner sc = new Scanner(System.in);
+        int seleccion;
+        double apuesta;
+        System.out.println("""
+                           Seleccione su apuesta
+                           0. Numero
+                           1. Rojo
+                           2. Negro
+                           3. Primer tercio
+                           4. Segundo tercio
+                           5. Tercer tercio
+                           6. Primera mitad
+                           7. Segunda mitad
+                           """);
+        seleccion = sc.nextInt();
+       System.out.println("¿Cuanto quiere apostar?");
+       apuesta = sc.nextDouble();
+        switch (seleccion) {
+            case 0 -> {
+                int numRule;
+                System.out.println("Seleccione la casilla por la que quiere apostar:");
+                numRule = sc.nextInt();
+                if (casilla == numRule) {
+                    saldo = saldo + (apuesta * 36);
+                }
+            }
+            case 1 -> {
+                if (color.equals("Rojo")) {
+                    saldo = saldo + (apuesta * 2);
+                }
+            }
+            case 2 -> {
+                if (color.equals("Negro")) {
+                    saldo = saldo + (apuesta * 2);
+                }
+            }
+            case 3 -> {
+                if (casilla<13 && casilla != 0) {
+                    saldo = saldo + (apuesta * 3);
+                }
+            }
+            case 4 -> {
+                if (casilla>13 && casilla < 24) {
+                    saldo = saldo + (apuesta * 3);
+                }
+            }
+            case 5 -> {
+                if (casilla > 24) {
+                    saldo = saldo + (apuesta * 3);
+                }
+            }
+            case 6 -> {
+                if (casilla > 18) {
+                    saldo = saldo + (apuesta * 2);
+                }
+            }
+            case 7 -> {
+                if (casilla < 19) {
+                    saldo = saldo + (apuesta * 2);
+                }
+            }
+        }
     }
 }
