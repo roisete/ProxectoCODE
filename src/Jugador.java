@@ -9,8 +9,8 @@ public class Jugador {
 
 
     /**
-     * setter de nombreJugador
-     * @param nombreJugador
+     * Setter de nombreJugador
+     * @param nombreJugador El nombre a añadir
      */
     public void setNombreJugador(String nombreJugador) {
         boolean setN=true;
@@ -31,42 +31,38 @@ public class Jugador {
     }
 
     /**
-     * getter del atributo saldo
-     * @return el saldo actual
+     * Getter del atributo saldo
+     * @return El saldo actual
      */
     public double getSaldo() {
         return saldo;
     }
 
     /**
-     * setter del atributo saldo
-     * @param saldo
+     * Setter del atributo saldo
+     * @param saldo El saldo a añadir
      */
     public void setSaldo(double saldo) {
-        boolean setS=true;
         Scanner sc = new Scanner(System.in);
+        boolean setS=true;
         do {
             try {
-                if (saldo <= 10) {
-                    throw new Exception();
-                } else {
-                    this.saldo = saldo;
-                    setS=false;
-                }
-            } catch (InputMismatchException e){
+                this.saldo = saldo;
+                setS = false;
+            } catch (InputMismatchException e) {
                 System.out.println("Valor inválido");
-                saldo= sc.nextDouble();
+                saldo = sc.nextDouble();
             } catch (Exception e) {
                 System.out.println("Valor inválido");
-                saldo= sc.nextDouble();
+                saldo = sc.nextDouble();
             }
-        }while (setS);
+        }while(setS);
     }
 
     /**
      * Constructor de la clase
-     * @param nombreJugador
-     * @param saldo
+     * @param nombreJugador Nombre del jugador
+     * @param saldo Saldo del jugador
      */
     public Jugador(String nombreJugador, double saldo) {
         this.nombreJugador = nombreJugador;
@@ -75,7 +71,7 @@ public class Jugador {
 
     /**
      * Función para devolver los datos en forma de cadena
-     * @return los datos en forma de cadena
+     * @return Los datos en forma de cadena
      */
     @Override
     public String toString() {

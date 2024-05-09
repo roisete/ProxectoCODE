@@ -14,8 +14,8 @@ public class Ruleta {
     }
 
     /**
-     * Getter de variable casilla
-     * @return casilla
+     * Getter del atributo casilla
+     * @return La casilla
      */
     public int getCasilla() {
         return casilla;
@@ -31,7 +31,7 @@ public class Ruleta {
 
     /**
      * Getter de variable color
-     * @return la variable color
+     * @return La variable color
      */
     public String getColor() {
         return color;
@@ -45,11 +45,10 @@ public class Ruleta {
     }
 
     /**
-     * Asigna ambas variables
+     * Asigna ambas variables ("gira la ruleta")
      */
     public void toSpin(){
         this.setCasilla();
         this.setColor();
-        System.out.printf("Ha salido el %d %s",this.getCasilla(),this.getColor());
     }
 }
