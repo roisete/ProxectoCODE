@@ -1,4 +1,9 @@
 import java.util.*;
+
+/**
+ * Clase que representa a la ruleta de un casino, con sus casillas con color respectivo, además
+ * de un método para "girarla"
+ */
 public class Ruleta {
     private String [] ruleta = {"Verde","Rojo","Negro","Rojo","Negro","Rojo","Negro","Rojo","Negro","Rojo",
             "Negro","Negro","Rojo","Negro","Rojo","Negro","Rojo","Negro","Rojo",

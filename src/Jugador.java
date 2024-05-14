@@ -1,6 +1,10 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Clase que crea un Jugador con nombre y saldo inicial, además de métodos como añadir
+ * más saldo o consultar su info.
+ */
 public class Jugador {
 
     /*Declaración de los atributos de la clase*/
